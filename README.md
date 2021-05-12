@@ -27,8 +27,12 @@ If we sort by branch, then roll number order is not changed; then it is called s
 ## Stable sort : Bubble sort, Insertion sort, Merge sort
 
 ## Unstable sort : Selection sort, Quick sort, Heap sort  
+
+## In-place algo: 
+An algo which does not need any additional data structure to store the elements. It will modify the existing structure only.
+
  
-##
+###
 
 1. Java sorting and Arrays.sort() method
 
