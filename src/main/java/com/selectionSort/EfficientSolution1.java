@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> Efficient approach for selection sort
+ *	-> Efficient approach for selection sort : Unstable algo
  * 
  *	-> For each iteration, keep finding lowest element from remaining array elements and once we find such lowest element; 
  *		swap it with current index.

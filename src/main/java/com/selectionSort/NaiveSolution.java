@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> Naive approach for selection sort
+ *	-> Naive approach for selection sort : Unstable algo
  *
  *	-> Keep finding lowest element from current array and put the lowest in a temporary array. And replace the lowest with a 
  *		Integer.MAX_VALUE value; so that for next iteration; other lowest element will be considered.

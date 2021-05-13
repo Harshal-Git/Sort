@@ -1,16 +1,18 @@
 # Sort
 Sort algo and other dependent algo
 
-* -> Time complexity:	
-* -> Space complexity:	
-* -> Auxiliary space:
+ * -> Time complexity:	
+ * -> Space complexity:	
+ * -> Auxiliary space:
 
 ###
  
 In Java for primitive values; Dual pivot quick sort algo is used. This algo does not guarantee stability. This is comparatively
 faster compared to stability providing algos.
 
-For wrapper classes; algo based on merge sort (derived from TimSort from python) is used which ensures stability. 
+For wrapper classes; algo based on merge sort (derived from TimSort from python) is used which ensures stability.
+
+For List<I> and primitive arrays; sorting methods mentioned above; exist in "java.util.Arrays" class. 
 
 #Stability with an example
 
@@ -58,7 +60,8 @@ An algo which does not need any additional data structure to store the elements.
 
 12. Quick sort / Quick sort using Lomuto & Hoare / Quick sort Algo analysis (space)   
 
-### Java's primitive sorting : Dual Pivot Quick sort (learn how it works?)
+### Java's primitive sorting (learn how it works?) 
+#### Dual Pivot Quick sort, TimSort 
 
 13. Pivot selection in Quick sort & worst case analysis
 

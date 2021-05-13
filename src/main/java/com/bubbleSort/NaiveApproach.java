@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> Bubble sort 
+ *	-> Bubble sort : Stable algo
  *
  * -> Time complexity: O(n^2)	
  * -> Space complexity:	O(n)

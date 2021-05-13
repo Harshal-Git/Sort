@@ -8,6 +8,8 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
+ *	-> Stable algo
+ *
  *	-> Bubble sort : efficient (lesser iterations in second loop as after each iteration; right most side of the element/s
  *					will be in place & control to terminate further iteration if array is already sorted OR gets sorted in-between.)
  *
