@@ -122,8 +122,8 @@ public class StandardApproach {
 		int rightIndex = 0;
 
 		/*
-		 * as current array is sub array of existing array; we 
-		 * have to use given delimiter to complete the merge 
+		 * as current array is sub array of existing array; we have to 
+		 * use existing 'start' and 'end' points to complete the merge 
 		 * process. It will vary based on each part of the sub array.
 		 */
 		subArrIndex = start;

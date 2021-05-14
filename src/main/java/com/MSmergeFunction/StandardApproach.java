@@ -11,10 +11,11 @@ import java.util.Arrays;
  *	-> An array is given with 3 elements called (low, mid, high) (low <= mid < high). In the given array, elements from low -> mid and
  *		 (mid+1) -> high are independently sorted but the full array is not sorted. We need to sort full array.
  *
- *  -> This is merge function of the Merge sort algorithm.
+ *  -> This is merge function of the Merge sort algorithm; where single array is virtually divided into sub arrays which are sorted
+ *  	and this function will combine both arrays in sorted manner.
  *  
  *  ex:
- *  	i/p: {10, 15, 20, 11, 30} & (0, 2, 4)	=> this means elements from 0 -> 2 are sorted and 3-> 4 are sorted. 
+ *  	i/p: {10, 15, 20, 11, 30} & (0, 2, 4) => this means elements from 0 -> 2 are sorted and 3-> 4 are sorted. 
  *  	o/p: {10, 11, 15, 20, 30}
  *  
  * 		i/p: {5, 8, 12, 14, 7} & (0, 3, 4) => o/p: {5, 7, 8, 12, 14}
