@@ -22,7 +22,7 @@ import java.util.Arrays;
  * 
  *  	i/p: {10, 15, 20, 40, 8, 11, 55} & (0, 3, 6) => o/p: {8, 10, 11, 15, 20, 40, 55} 		
  * 
- * -> Time complexity: 0(high-low)	~ 0(n)
+ * -> Time complexity: 0(high-low)	~ 0(n) - 'n' stands for given array size
  * -> Space complexity:	0(high-low) ~ 0(n)
  * -> Auxiliary space: 0(high-low) ~ 0(n)
  */
@@ -35,7 +35,7 @@ public class StandardApproach {
 
 		int low, mid, high;
 
-		/*int [] data1 = {10, 15, 20, 11, 30};
+		int [] data1 = {10, 15, 20, 11, 30};
 		low = 0; mid = 2; high = 4;
 		printMessage(data1, low, mid, high);
 
@@ -45,7 +45,7 @@ public class StandardApproach {
 
 		int [] data3 = {10, 15, 20, 40, 8, 11, 55};
 		low = 0; mid = 3; high = 6;
-		printMessage(data3, low, mid, high);*/
+		printMessage(data3, low, mid, high);
 
 		int [] data4 = {10, 8};
 		low = 0; mid = 0; high = 1;
