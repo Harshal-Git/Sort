@@ -31,7 +31,7 @@ If we sort by branch, then roll number order is not changed; then it is called s
 ## Unstable sort : Selection sort, Quick sort, Heap sort  
 
 ## In-place algo: 
-An algo which does not need any additional data structure to store the elements. It will modify the existing structure only.
+An algo which does not need any additional data structure to store the elements. It will modify the existing DS only.
 
  
 ###

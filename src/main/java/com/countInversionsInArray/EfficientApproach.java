@@ -113,7 +113,13 @@ public class EfficientApproach {
 					// if right array element is smaller
 					data[indexArr] = rightArr[rightIndex];
 					rightIndex++;
-					// calculate inversion
+					/*
+					 * Inversion calculation
+					 * if any element we find in left array is greater than right array; 
+					 * that means the element & all further elements in the left array 
+					 * are higher and will form inversion pairs with the same right array. 
+					 * Hence we can directly calculate multiple inversion pairs with this formula.
+					 */
 					inversionCount+= (leftSize-leftIndex);
 				}
 			} else if(leftIndex < leftSize){
