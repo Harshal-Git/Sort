@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.QSQuickSelect;
+package com.QSQuickSelectOrKthSmallest;
 
 import java.util.Arrays;
 

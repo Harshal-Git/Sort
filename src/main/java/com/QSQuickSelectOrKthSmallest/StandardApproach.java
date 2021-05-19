@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.QSQuickSelect;
+package com.QSQuickSelectOrKthSmallest;
 
 import java.util.Arrays;
 
@@ -16,7 +16,8 @@ import java.util.Arrays;
  *
  *			i/p: {30, 20, 5, 10, 8} & k = 4	=> o/p: 20
  *
- *	-> this is standard solution using Lomuto partition. This will also internally update/sort the array.
+ *	-> this is standard solution using Lomuto partition. This will possibly update/sort the array (not when k is (size-1) as that 
+ *		will be the pivot for Lomuto partition and in first go; array elements does not get rearranged.)
  *
  * -> Time complexity: O(n * log n) - for sorting using quick sort average case ; O(n^2) in worst case	
  * -> Space complexity:	0(n)
