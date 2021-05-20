@@ -11,16 +11,16 @@ import java.util.Arrays;
  *	-> Partition the given array around a given range in such a way that all elements from given range's smallest element comes
  *		on left & other elements comes on right. Range has 2 point {a, b} where a <= b.
  *
- * 	-> naive approach : multiple iteration & pick each element for each iteration from given range.
+ * 	-> efficient approach : single iteration using Dutch National Flag algo
  * 
  * 	-> ex:
  * 		i/p: {10, 5, 6, 3, 20, 9, 40} & range = [5, 10]	=> o/p: {3, 5, 6, 9, 10, 20, 40} 
  * 
- * -> Time complexity: 0(n)+0(n)+0(n)+0(n) ~ 0(n)	
+ * -> Time complexity: 0(n)	- single traversal
  * -> Space complexity:	0(n)
- * -> Auxiliary space:  0(n)
+ * -> Auxiliary space:  0(1)
  */
-public class Q3NaiveApproach {
+public class Q3EfficientApproach {
 
 	/**
 	 * @param args
@@ -38,7 +38,7 @@ public class Q3NaiveApproach {
 
 	/**
 	 * @param data
-	 * @param range 
+	 * @param pivot 
 	 */
 	private static void printMessage(int[] data, int[] range) {
 		System.out.println("\nArray: "+Arrays.toString(data)+" -> Pivot: "+Arrays.toString(range));
@@ -48,39 +48,39 @@ public class Q3NaiveApproach {
 
 	/**
 	 * @param data
-	 * @param range[] 
+	 * @param range 
 	 */
 	private static void partitionArray(int[] data, int[] range) {
+		// initialization
 		int size = data.length;
+		int start = 0, mid = 0, end = (size-1);
+		// iterate through all elements until mid & end crosses each other
+		while(mid <= end) {
+			// if current element smaller than pivot; swap and process left pointers 
+			if(data[mid] < range[0]) {
+				swap(data, start, mid);
+				start++;
+				mid++;
+			} else if((data[mid] >= range[0]) && (data[mid] <= range[1])) {
+				// if current element is same as pivot; don't swap anything
+				mid++;
+			} else {
+				// if current element is more than pivot; swap & process right pointer only
+				swap(data, mid, end);
+				end--;
+			}
+		}
+	}
 
-		int [] temp = new int[size];
-		int tempIndex = 0;
-
-		// process < range (excluding smaller in range)
-		for(int index = 0; index < size; index++) {
-			if(data[index] < range[0]) {
-				temp[tempIndex] = data[index];
-				tempIndex++;
-			}
-		}
-		// process in-between range (including smaller & excluding larger from range)
-		for(int index = 0; index < size; index++) {
-			if((data[index] >= range[0]) && (data[index] <= range[1])) {
-				temp[tempIndex] = data[index];
-				tempIndex++;
-			}
-		}
-		// process more than range (including larger in range ONLY)
-		for(int index = 0; index < size; index++) {
-			if(data[index] > range[1]) {
-				temp[tempIndex] = data[index];
-				tempIndex++;
-			}
-		}
-		// copy data back to original array
-		for(int index = 0; index < size; index++) {
-			data[index]=temp[index];
-		}
+	/**
+	 * @param data
+	 * @param start
+	 * @param mid
+	 */
+	private static void swap(int[] data, int pos1, int pos2) {
+		int temp = data[pos1];
+		data[pos1] = data[pos2];
+		data[pos2] = temp;
 	}
 
 }

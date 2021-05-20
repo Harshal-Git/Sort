@@ -29,6 +29,11 @@ public class Q1NaiveApproach {
 		int [] data1 = {0, 1, 0, 2, 1, 2, 1, 2, 2};
 		printMessage(data1);
 
+		int [] data2 = {0, 1, 0, 2, 1, 0, 2, 0, 2, 1};
+		printMessage(data2);
+		
+		int [] data3 = {0, 1, 0, 1, 0, 0, 2, 1};
+		printMessage(data3);
 	}
 
 	/**

@@ -9,7 +9,8 @@ There are different variations for this problem. All solutions are given.
 
 	i/p: {2, 1, 2, 20, 10, 20, 1} & pivot = 2 => o/p: {1, 1, 2, 2, 20, 10, 20}
 	
-3. Partition the given array around a given range in such a way that all elements from given range's smallest element comes
-	on left & other elements comes on right. Range has 2 point {a, b} where a <= b.  (Q3*.java)
+3. Partition the given array around a given range in such a way that all elements smaller from given range's smaller element
+	will be on left & higher than the range's higher element will be on right. The elements within the range may appear in any order
+	in-between extreme left & extreme right. Range has 2 point {a, b} where a <= b.  (Q3*.java)
 
 	i/p: {10, 5, 6, 3, 20, 9, 40} & range = [5, 10]	=> o/p: {3, 5, 6, 9, 10, 20, 40} 
