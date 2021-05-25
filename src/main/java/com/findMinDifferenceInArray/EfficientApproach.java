@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.minDifferenceInArray;
+package com.findMinDifferenceInArray;
 
 import java.util.Arrays;
 
@@ -10,7 +10,7 @@ import java.util.Arrays;
  *
  *	-> find minimum difference between elements of a given array with natural number - sorted OR unsorted.
  *
- *	-> naive solution : compare each element with each other using 2 loops.
+ *	-> efficient solution 
  *
  * 	-> ex:
  * 			i/p: {1, 8, 12, 5, 18}	=> o/p: 3 (8-5)
@@ -21,12 +21,12 @@ import java.util.Arrays;
  * 
  * 			i/p: {10}	=> o/p: Integer.MAX_VAL
  * 
- * -> Time complexity: 0(n^2)	
+ * 
+ * -> Time complexity: O(n * log n) + 0(n) ~ O(n * log n)  	
  * -> Space complexity:	0(n)
  * -> Auxiliary space: 0(1)
- * 
  */
-public class NaiveApproach {
+public class EfficientApproach {
 
 	/**
 	 * @param args
@@ -38,32 +38,36 @@ public class NaiveApproach {
 
 		int [] data2 = {8, 15};
 		System.out.println("\nArray: "+Arrays.toString(data2)+" => Min difference: "+findMinDiff(data2));
-		
-		int [] data3 = {8, -1, 0, 3};
+
+		int [] data3 = {8, -1, 0, 3, -2};
 		System.out.println("\nArray: "+Arrays.toString(data3)+" => Min difference: "+findMinDiff(data3));
-		
+
 		int [] data4 = {10};
 		System.out.println("\nArray: "+Arrays.toString(data4)+" => Min difference: "+findMinDiff(data4));
+
 	}
 
 	/**
-	 * @param data
+	 * @param data1
 	 * @return
 	 */
 	private static int findMinDiff(int[] data) {
+
 		// initializations
 		int size = data.length;
-		int diff = Integer.MAX_VALUE;
 
-		// iterate over all elements
-		for(int index = 1; index < size; index++) {
-			// iterate over all previous element of current element
-			for(int sub = 0; sub < index; sub++) {
-				// find lowest difference of all previous element of current element
-				diff = findMin(diff, Math.abs(data[index]-data[sub]));
-			}
+		// MAX_VALUE as default lowest difference 
+		int minDiff = Integer.MAX_VALUE;
+
+		// sort the given array
+		Arrays.sort(data);
+
+		// now for each element; find lowest consecutive elements difference.
+		for(int index = 0; index < (size-1); index++) {
+			minDiff = findMin(minDiff, Math.abs(data[index+1] - data[index]));
 		}
-		return diff;
+		// return the lowest difference
+		return minDiff;
 	}
 
 	/**
@@ -75,5 +79,4 @@ public class NaiveApproach {
 	private static int findMin(int num1, int num2) {
 		return ((num1 < num2) ? (num1) : (num2));
 	}
-
 }
