@@ -35,6 +35,9 @@ public class NaiveSolution {
 
 		int [] data3 = {10, 8, 20, 5};
 		printMessage(data3);
+		
+		int [] data4 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+		printMessage(data4);
 	}
 
 	/**

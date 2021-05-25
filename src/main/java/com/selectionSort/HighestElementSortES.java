@@ -8,20 +8,22 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> Efficient approach for selection sort : Unstable algo
+ *	-> Efficient approach for reverse selection sort : Unstable algo
  * 
- *	-> For each iteration, keep finding lowest element from remaining array elements and once we find such lowest element; 
+ *	-> For each iteration, keep finding highest element from remaining array elements and once we find such highest element; 
  *		swap it with current index.
  *
  *	-> This process will keep creating window of sorted elements with every iteration on the left side of the array.  
  *	   With every further iteration; this window needs not to be processed. 
+ *
+ *	-> Instead of finding lowest element, find a max element always and can be replaced with last element.
  *
  * -> Time complexity: 0(n^2)	
  * -> Space complexity:	0(n)
  * -> Auxiliary space: 0(1) 
  * 
  */
-public class EfficientSolution1 {
+public class HighestElementSortES {
 
 	/**
 	 * @param args
@@ -47,7 +49,7 @@ public class EfficientSolution1 {
 	private static void printMessage(int[] data) {
 		System.out.println("\nOriginal array: "+Arrays.toString(data));
 		selectionSort(data);
-		System.out.println("Sorted array: "+Arrays.toString(data));
+		System.out.println("Reverse sorted array: "+Arrays.toString(data));
 	}
 
 	/**
@@ -55,22 +57,22 @@ public class EfficientSolution1 {
 	 */
 	private static void selectionSort(int[] data) {
 		int size = data.length;
-		int lowestIndex = 0;
-		// iterate over all elements
-		for(int index = 0; index < size; index++) {
-			// for each iteration; reset the lowest 
-			lowestIndex = index;
-			/*
-			 * iterate over all remaining elements and find lowest element index
-			 * and also not processing left most elements window which is sorted.
-			 */
-			for(int count = (index+1); count < size; count++) {
-				if(data[lowestIndex] > data[count]) {
-					lowestIndex = count;
+		int highestElementIndex = -1;
+		
+		// iterate over all element & find highest element index
+		for(int index = (size-1); index >= 0; index--) {
+			
+			// always consider current position for highest element
+			highestElementIndex = index;
+			
+			// iterate over remaining elements on right to find highest element
+			for(int count = 0; count < index; count++) {
+				if(data[highestElementIndex] < data[count]) {
+					highestElementIndex = count;
 				}
 			}
-			// swap lowest element index & current index
-			swap(data, lowestIndex, index);
+			// swap current highest element with current elements
+			swap(data, index, highestElementIndex);
 		}
 	}
 
