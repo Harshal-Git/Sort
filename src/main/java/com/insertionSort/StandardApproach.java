@@ -13,9 +13,15 @@ import java.util.Arrays;
  *	-> Iterate array elements and find a correct position where the elements can be placed. Keep shifting elements towards
  *		right side of the array if any element needs to be inserted in-between.
  *
- * -> Time complexity: O(n^2) => Best case 0(n) [when sorted array is given] & Worst case 0(n^2) [when reverse sorted array is given]	
- * -> Space complexity:	O(n)
- * -> Auxiliary space: O(1)
+ *	-> Java standard sort function (Arrays.sort - for wrapper class arrays) uses Insertion sort for smaller data size (< 7) 
+ *		and for rest it uses merge sort.
+ *
+ * 	-> For primitive arrays; it uses Dual pivot quick sort.
+ * 
+ * 	-> Time complexity: O(n^2) => Best case 0(n) [when sorted array is given] & Worst case 0(n^2) 
+ * 								[when reverse sorted array is given]	
+ * 	-> Space complexity:	O(n)
+ * 	-> Auxiliary space: O(1)
  */
 public class StandardApproach {
 

@@ -8,9 +8,14 @@ import java.util.Arrays;
 /**
  * @author Harshal-Git
  *
- *	-> Merge sort : Stable algo
+ *	-> Merge sort : Stable algo : suitable for linked list sorting.
  *	
  *	-> Merge sort algorithm: this is based on divide & conquer approach and hence it will be a recursive call.
+ *
+ *	-> Java standard sort function (Arrays.sort - for wrapper class arrays) uses Insertion sort for smaller data size (< 7) 
+ *		and for rest it uses merge sort.
+ *
+ * 	-> For primitive arrays; it uses Dual pivot quick sort.
  *
  *	-> Algo: 
  *
@@ -102,16 +107,14 @@ public class StandardApproach {
 		int [] leftArr = new int[((mid-start)+1)];
 		int subArrIndex = 0;
 		for(int index = start; index <= mid; index++) {
-			leftArr[subArrIndex] = data[index];
-			subArrIndex++;
+			leftArr[subArrIndex++] = data[index];
 		}
 
 		// prepare right sub array
 		subArrIndex = 0;
 		int [] rightArr = new int[end-mid];
 		for(int index = (mid+1); index <= end; index++) {
-			rightArr[subArrIndex] = data[index];
-			subArrIndex++;
+			rightArr[subArrIndex++] = data[index];
 		}
 
 		// merge both sorted arrays into original array
@@ -128,28 +131,22 @@ public class StandardApproach {
 		 */
 		subArrIndex = start;
 		while(subArrIndex <= end) {
-
 			// if both array has data
 			if((leftIndex < leftSize) && (rightIndex < rightSize)) {
 				if(leftArr[leftIndex] <= rightArr[rightIndex]) {
 					// put left array elements into original array
-					data[subArrIndex] = leftArr[leftIndex];
-					leftIndex++;
+					data[subArrIndex++] = leftArr[leftIndex++];
 				} else {
 					// put right array elements into original array
-					data[subArrIndex] = rightArr[rightIndex];
-					rightIndex++;
+					data[subArrIndex++] = rightArr[rightIndex++];
 				}
 			} else if(leftIndex < leftSize) {
 				// right array is exhausted
-				data[subArrIndex] = leftArr[leftIndex];
-				leftIndex++;
+				data[subArrIndex++] = leftArr[leftIndex++];
 			} else {
 				// left array is exhausted
-				data[subArrIndex] = rightArr[rightIndex];
-				rightIndex++;
+				data[subArrIndex++] = rightArr[rightIndex++];
 			}
-			subArrIndex++;
 		}
 	}
 }

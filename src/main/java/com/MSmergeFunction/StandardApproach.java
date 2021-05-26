@@ -104,22 +104,17 @@ public class StandardApproach {
 			// & adding into original array in sorted manner
 			if((leftIndex < leftSize) && (rightIndex < rightSize)) {
 				if(leftArr[leftIndex] <= rightArr[rightIndex]) {
-					data[subArrayIndex] = leftArr[leftIndex];
-					leftIndex++;
+					data[subArrayIndex++] = leftArr[leftIndex++];
 				} else {
-					data[subArrayIndex] = rightArr[rightIndex];
-					rightIndex++;
+					data[subArrayIndex++] = rightArr[rightIndex++];
 				}
 			} else if(rightIndex < rightSize){
 				// if left sub array is exhausted
-				data[subArrayIndex] = rightArr[rightIndex];
-				rightIndex++;
+				data[subArrayIndex++] = rightArr[rightIndex++];
 			} else {
 				// if right sub array is exhausted
-				data[subArrayIndex] = leftArr[leftIndex];
-				leftIndex++;
+				data[subArrayIndex++] = leftArr[leftIndex++];
 			}
-			subArrayIndex++;
 		}
 	}
 }
