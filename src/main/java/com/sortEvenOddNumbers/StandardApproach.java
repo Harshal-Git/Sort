@@ -46,7 +46,8 @@ public class StandardApproach {
 		Arrays.sort(data, new Comparator<Integer>() {
 			@Override
 			public int compare(Integer int1, Integer int2) {
-				return ((int1.intValue()%2) - (int2.intValue()%2));
+				//return ((int1.intValue()%2) - (int2.intValue()%2));	// for EVEN <-> ODD
+				return ((int2.intValue()%2) - (int1.intValue()%2));	// for ODD <-> EVEN
 			}
 		});
 		// print sorted array
