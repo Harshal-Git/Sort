@@ -48,7 +48,7 @@ public class StandardApproachForNonDuplicates {
 		int size = data.length;
 		int sortKey = -1;
 		int sortKeyIndex = -1;
-		int noOfSwaps = 0;	// a variation can be asked to find number of swaps
+		//int noOfSwaps = 0;	// a variation can be asked to find number of swaps
 		
 		// iterate over each element and find number of lower elements than current element
 		for(int cycleStart = 0; cycleStart < size; cycleStart++) {
@@ -65,7 +65,7 @@ public class StandardApproachForNonDuplicates {
 			}
 			// swap current element with those many positions
 			sortKey = updateSortKey(data, sortKey, sortKeyIndex);
-			noOfSwaps++;
+			//noOfSwaps++;
 			//System.out.println("-> sort key = "+sortKey+" : "+Arrays.toString(data));
 			
 			// repeat the cycle until we reach to the same element from  
@@ -79,7 +79,7 @@ public class StandardApproachForNonDuplicates {
 				}
 				// swap current element with those many positions
 				sortKey = updateSortKey(data, sortKey, sortKeyIndex);
-				noOfSwaps++;
+				//noOfSwaps++;
 				//System.out.println("-> sort key = "+sortKey+" : "+Arrays.toString(data));
 			}
 		}
