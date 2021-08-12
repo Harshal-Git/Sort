@@ -16,11 +16,11 @@ For List<I> and primitive arrays; sorting methods mentioned above; exist in "jav
 
 #Stability with an example
 
-Ex: Consider data of branch of as student & it's roll number.
+Ex: Consider data of branch of as student & it's roll number (in roll no increasing order).
 	
 	[CS, 101], [ECE, 102], [CS, 104], [CS, 105], [ECE, 107] 
 
-If above data is sorted by it's branch; the roll number should be in the same order as the data was fed.
+If above data is sorted by it's branch; the roll number should be in the same order as in step#1.
 
 	[CS, 101], [CS, 104], [CS, 105], [ECE, 102], [ECE, 107]
 	
